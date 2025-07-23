@@ -7,15 +7,15 @@ var MyExample: int:
 	set(value):
 		_myExample= value
 		
-var _notifyExample : String = "Low"
+var _notify_example : String = "Low"
 var NotifyExample: String:
 	get: 
-		return _notifyExample
+		return _notify_example
 	set(value):
-		_notifyExample= value
-		NotifyChange()
+		_notify_example= value
+		notify_change()
 
 func _init(section: String) -> void:
 	super._init(section)
 	
-	configKeyMap["myExample"] = &"MyExample"
+	_config_key_map["myExample"] = &"MyExample"
