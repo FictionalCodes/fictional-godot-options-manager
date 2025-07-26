@@ -18,8 +18,8 @@ var _config_key_map : Dictionary[String, StringName] = {}
 var _revert_copy: Dictionary
 
 
-func _init(section_name: String):
-	_section = section_name
+func _init(name: String):
+	_section = name
 
 
 

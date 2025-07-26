@@ -1,4 +1,4 @@
-extends Node
+class_name OptionsManager extends Node
 
 var config_to_load : String
 var _config := ConfigFile.new()
