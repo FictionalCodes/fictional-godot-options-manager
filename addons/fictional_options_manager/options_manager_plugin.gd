@@ -23,7 +23,7 @@ func _enable_plugin():
 		"name": OptionsManagerConsts.config_file_sections_settings_prop_path,
 		"type": TYPE_PACKED_STRING_ARRAY,
 		"hint": PROPERTY_HINT_ARRAY_TYPE,
-		"hint_string": TYPE_STRING_NAME
+		"hint_string": "%d:" % [TYPE_STRING_NAME]
 	})
 	ProjectSettings.set_initial_value(OptionsManagerConsts.config_file_sections_settings_prop_path, [])
 	ProjectSettings.set_as_basic(OptionsManagerConsts.config_file_path_settings_prop_path, true)
