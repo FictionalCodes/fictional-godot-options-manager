@@ -15,3 +15,6 @@ data_*/
 mono_crash.*.json
 
 /images/*.import
+
+*.gd.uid
+addon_icon.png.import
