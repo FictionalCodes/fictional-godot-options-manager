@@ -7,7 +7,7 @@ var _config := ConfigFile.new()
 var _config_sets :Dictionary[StringName, OptionsSection] = {}
 func _init() -> void:
 	config_to_load = ProjectSettings.get_setting(OptionsManagerConsts.config_file_path_settings_prop_path, OptionsManagerConsts.config_file_path_default)
-	var type_names = ProjectSettings.get_setting(OptionsManagerConsts.config_file_sections_settings_prop_path) as PackedStringArray
+	var type_names = ProjectSettings.get_setting(OptionsManagerConsts.config_file_sections_settings_prop_path, []) as PackedStringArray
 	for type in type_names:
 		var item := ClassUtils.get_type(type) as GDScript
 		if item != null:
