@@ -19,7 +19,7 @@ var AUDIO_SCALE_MAX := 100.0
 
 ## Updates Audio Levels based on values from the AudioOptions [br]
 ## Sets Master, Music and SFX levels
-func update_audio_levels(options: AudioOptions):
+func update_audio_levels(options: AudioOptions) -> void:
 
 	# this function is called automatically whenever the AudioOptions is updated
 

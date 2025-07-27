@@ -84,7 +84,20 @@ Each Section is stored in a dictionary keyed to the SectionName property, and wi
 Assuming your Types have been added as per the Project Settings section above, you will only need to interact with the Options Manager in a few instances
 
 + Saving the Configuration
-  + The `save_configuration()` method should be called
+  + The `save_configuration()` method should be called when you want all the current local updates to be saved back to the filesystem and the updates to be pushed through the notifications
++ Binding to settings updates
+  + Using the `bind_notifcation(name: StringName, callback:Callable)` method will add your callback to the configuration section with the section name
+  + The name is Case Sensitive
+  + The provided callback method should have 1 parameter, the type of the settings you wish to have, and should return void
+   + Example Useage
+
+         OptionsManager.bind_notifcation(&"Audio", update_audio_levels)
+   + Example Callback Method Signature
+
+         func update_audio_levels(options: AudioOptions) -> void:
+
+
+
 
 ---
 
