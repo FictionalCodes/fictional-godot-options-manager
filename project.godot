@@ -10,11 +10,12 @@ config_version=5
 
 [Fictional_Options_Manager]
 
-General/option_sections=[null]
+General/option_sections=[&"AudioOptions"]
 
 [application]
 
 config/name="OptionsAddon"
+run/main_scene="res://node_2d.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
