@@ -10,7 +10,10 @@ func _init() -> void:
 	var type_names = ProjectSettings.get_setting(OptionsManagerConsts.config_file_sections_settings_prop_path) as PackedStringArray
 	for type in type_names:
 		var item := ClassUtils.get_type(type) as GDScript
-		add_config_section(item.new())
+		if item != null:
+			add_config_section(item.new())
+		else:
+			push_error("Unable to locate ", type, " as a class within the project")
 	
 func _ready():
 	load_configuration()
