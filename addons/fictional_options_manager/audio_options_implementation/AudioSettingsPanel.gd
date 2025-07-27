@@ -9,7 +9,7 @@ var _options : AudioOptions = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	FictionalOptionsManager.bind_notifcation("Audio", set_slider_values)
+	OptionsManager.bind_notifcation(&"Audio", set_slider_values)
 
 func set_slider_values(options:AudioOptions) -> void:
 	_masterSlider.set_value_no_signal(_options.MasterVolume)
@@ -31,4 +31,4 @@ func _on_effects_volume_slider_value_changed(value: float) -> void:
 
 
 func _on_tree_exiting() -> void:
-	FictionalOptionsManager.save_configuration()
+	OptionsManager.save_configuration()

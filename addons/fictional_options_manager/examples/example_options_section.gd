@@ -15,7 +15,7 @@ var NotifyExample: String:
 		_notify_example= value
 		notify_change()
 
-func _init(section: String) -> void:
+func _init(section: StringName) -> void:
 	super._init(section)
 	
 	_config_key_map["myExample"] = &"MyExample"

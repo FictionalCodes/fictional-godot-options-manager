@@ -1,8 +1,7 @@
 @tool
 extends EditorPlugin
 
-# Replace this value with a PascalCase autoload name, as per the GDScript style guide.
-const AUTOLOAD_NAME := "FictionalOptionsManager"
+const AUTOLOAD_NAME := "OptionsManager"
 
 func _enable_plugin():
 	# The autoload can be a scene or script file.
@@ -23,7 +22,8 @@ func _enable_plugin():
 	ProjectSettings.add_property_info({
 		"name": OptionsManagerConsts.config_file_sections_settings_prop_path,
 		"type": TYPE_PACKED_STRING_ARRAY,
-		"hint_string": OptionsManagerConsts.config_file_path_default,
+		"hint": PROPERTY_HINT_ARRAY_TYPE,
+		"hint_string": TYPE_STRING_NAME
 	})
 	ProjectSettings.set_initial_value(OptionsManagerConsts.config_file_sections_settings_prop_path, [])
 	ProjectSettings.set_as_basic(OptionsManagerConsts.config_file_path_settings_prop_path, true)

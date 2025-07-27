@@ -5,8 +5,8 @@ signal _options_changed
 #var _notification: Signal = Signal(self, &"OptionsChanged")
 
 
-var _section: String
-var section_name: String:
+var _section: StringName
+var section_name: StringName:
 	get: return _section
 
 var suppress_notifications: bool = false:
@@ -18,7 +18,7 @@ var _config_key_map : Dictionary[String, StringName] = {}
 var _revert_copy: Dictionary
 
 
-func _init(name: String):
+func _init(name: StringName):
 	_section = name
 
 

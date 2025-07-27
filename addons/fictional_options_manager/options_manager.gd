@@ -1,12 +1,12 @@
-class_name OptionsManager extends Node
+class_name FictionalOptionsManager extends Node
 
 var config_to_load : String
 var _config := ConfigFile.new()
 
-var _config_sets :Dictionary[String, OptionsSection] = {}
+var _config_sets :Dictionary[StringName, OptionsSection] = {}
 func _init() -> void:
 	config_to_load = ProjectSettings.get_setting(OptionsManagerConsts.config_file_path_settings_prop_path, OptionsManagerConsts.config_file_path_default)
-	var type_names = ProjectSettings.get_setting(OptionsManagerConsts.config_file_sections_settings_prop_path)
+	var type_names = ProjectSettings.get_setting(OptionsManagerConsts.config_file_sections_settings_prop_path) as PackedStringArray
 	for type in type_names:
 		var item := ClassUtils.get_type(type) as GDScript
 		add_config_section(item.new())
@@ -14,7 +14,7 @@ func _init() -> void:
 func _ready():
 	load_configuration()
 
-func add_config_section_with_name(sectionName: String, type: OptionsSection) -> void:
+func add_config_section_with_name(sectionName: StringName, type: OptionsSection) -> void:
 	_config_sets[sectionName] = type
 	
 func add_config_section(type: OptionsSection) -> void:
