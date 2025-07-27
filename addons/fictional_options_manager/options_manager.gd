@@ -49,7 +49,7 @@ func load_configuration() -> void:
 ## Will also save the file directly via [method ConfigFile.save]
 func save_configuration() -> void:
 	for cset: OptionsSection in _config_sets.values():
-		cset.save(_config)
+		cset.apply(_config)
 	
 	_config.save(config_to_load)
 
